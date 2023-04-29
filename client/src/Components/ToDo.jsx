@@ -1,9 +1,15 @@
 import React from "react"
 
-function ToDo () {
+function ToDo (props) {
+    const todo = props.todo
+
     return (
         <div>
-            <p>Task text</p>
+            {todo.map((task) => (
+                <div className="todo" key={task.id}>
+                <p>{task.text}</p> 
+                </div>
+            ))}
         </div>
     )
 }

@@ -10,11 +10,7 @@ function Tasklist () {
     return (
         <div>
             <h1>Task List</h1>
-            {todo.map((task) => (
-                <div className="todo" key={task.id}>
-                    <p>{task.text}</p>
-                </div>
-            ))}
+            <ToDo todo={todo}/>
         </div>
     )
 }
