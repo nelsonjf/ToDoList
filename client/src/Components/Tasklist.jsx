@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import ToDo from "./ToDo"
+import New from "./New"
 
 function Tasklist () {
     const [todo, setTodo] = useState([
@@ -10,6 +11,7 @@ function Tasklist () {
     return (
         <div>
             <h1>Task List</h1>
+            <New />
             <ToDo todo={todo}/>
         </div>
     )

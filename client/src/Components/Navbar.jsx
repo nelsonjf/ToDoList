@@ -6,7 +6,6 @@ function Navbar () {
         <div>
             <nav className="navbar">
                 <Link to='/'>Home</Link>
-                <Link to='/new'>New ToDo</Link>
             </nav>
         </div>
     )
