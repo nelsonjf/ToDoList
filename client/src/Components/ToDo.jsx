@@ -1,7 +1,9 @@
+import React from "react"
+
 function ToDo () {
     return (
         <div>
-            <p>ToDo</p>
+            <p>Task text</p>
         </div>
     )
 }
