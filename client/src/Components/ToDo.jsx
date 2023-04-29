@@ -1,7 +1,7 @@
 function ToDo () {
     return (
         <div>
-            <h1>ToDo</h1>
+            <p>ToDo</p>
         </div>
     )
 }
