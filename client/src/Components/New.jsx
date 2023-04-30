@@ -1,6 +1,6 @@
 import React from "react"
 
-function New (props) {
+function New () {
     return (
         <div>
             <form>

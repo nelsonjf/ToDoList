@@ -8,12 +8,12 @@ mongoose.connect("mongodb://localhost/todolist")
 
 const Todo = require('./models/todo')
 
-app.get('/', async (req, res) => {
+app.get('/todo', async (req, res) => {
     const todos = await Todo.find()
     res.json(todos)
 })
 
-app.post('/new', (req, res) => {
+app.post('/todo/new', (req, res) => {
     const todo = new Todo({
         task: req.body.text
     })
@@ -21,12 +21,12 @@ app.post('/new', (req, res) => {
     res.json(todo)
 })
 
-app.delete('/delete/:id', async(req, res) => {
+app.delete('/todo/delete/:id', async(req, res) => {
     const result = await Todo.findByIdAndDelete(req.params.id)
     res.json(result)
 })
 
-app.put('/complete/:id', async (req, res) => {
+app.put('/todo/complete/:id', async (req, res) => {
     const todo = await Todo.findById(req.params.id)
     todo.done = !todo.done
     todo.save()
