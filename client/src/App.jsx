@@ -16,6 +16,17 @@ function App() {
         .catch(err => console.error("Error: ", err))
   }
 
+  const todoDone = async id => {
+    const data = await fetch("/todo/done/" + id).then(res => res.json())
+
+      setTodos(todos => todos.map(todo => {
+        if (todo._id === data._id) {
+          todo.done = data.done
+        }
+
+        return todo
+      }))
+  }
 
   return (
     <div className="App">
@@ -34,7 +45,7 @@ function App() {
           <div className={"todo " + (todo.done ? "is-done" : "")} key={todo._id}>
             <div>
               <p>{todo.todo}</p>
-              <button className="done">
+              <button className="done" onClick={() => todoDone(todo._id)}>
                  Done
               </button>
               <button className="delete">
