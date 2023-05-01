@@ -11,6 +11,7 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 
 const Todo = require('./models/todo')
+const todo = require('./models/todo')
 
 app.get('/', async (req, res) => {
     const todo = await Todo.find()
@@ -28,6 +29,13 @@ app.post('/new', (req, res) => {
 app.delete('/delete/:id', async (req, res) => {
     const result = await Todo.findByIdAndDelete(req.params.id)
     res.json(result)
+})
+
+app.put('/done/:id', async (req, res) => {
+    const todo = await Todo.findById(req.params.id)
+    todo.done = !todo.done
+    todo.save()
+    res.json(todo)
 })
 
 app.listen(process.env.PORT, () => console.log("Server running"))
