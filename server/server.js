@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////////////////
+// Large parts of this code are inspired by or copied from //
+// Tyler Potts' fullstack tutorial on Youtube. //////////////
+// https://youtu.be/R81g-2r6ynM /////////////////////////////
+/////////////////////////////////////////////////////////////
+
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
