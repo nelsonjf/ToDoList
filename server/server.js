@@ -13,12 +13,12 @@ mongoose.connect(process.env.MONGO_URI, {
 const Todo = require('./models/todo')
 const todo = require('./models/todo')
 
-app.get('/', async (req, res) => {
+app.get('/todo', async (req, res) => {
     const todo = await Todo.find()
     res.json(todo)
 })
 
-app.post('/new', (req, res) => {
+app.post('/todo/new', (req, res) => {
     const todo = new Todo({
         todo: req.body.todo
     })
@@ -26,12 +26,12 @@ app.post('/new', (req, res) => {
     res.json(todo)
 })
 
-app.delete('/delete/:id', async (req, res) => {
+app.delete('/todo/delete/:id', async (req, res) => {
     const result = await Todo.findByIdAndDelete(req.params.id)
     res.json(result)
 })
 
-app.put('/done/:id', async (req, res) => {
+app.put('/todo/done/:id', async (req, res) => {
     const todo = await Todo.findById(req.params.id)
     todo.done = !todo.done
     todo.save()
