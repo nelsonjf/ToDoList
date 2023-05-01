@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
@@ -33,4 +34,4 @@ app.put('/todo/complete/:id', async (req, res) => {
     res.json(todo)
 })
 
-app.listen(4000, () => console.log("Server running on port 4000"))
+app.listen(process.env.PORT, () => console.log("Server running"))
