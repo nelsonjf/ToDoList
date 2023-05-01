@@ -37,6 +37,11 @@ body {
     border-radius: 25px;
 }
 
+.todo.is-done p {
+    text-decoration: line-through;
+    color: #73956f;
+}
+
 .todo p {
     font-size: 20px;
 }

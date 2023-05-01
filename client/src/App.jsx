@@ -31,7 +31,7 @@ function App() {
       <div className="todo-list">
         <h2>To Do List:</h2>
         {todos.map(todo => (
-          <div className="todo" key={todo._id}>
+          <div className={"todo " + (todo.done ? "is-done" : "")} key={todo._id}>
             <div>
               <p>{todo.todo}</p>
               <button className="done">
