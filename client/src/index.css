@@ -24,23 +24,28 @@ body {
     padding: 5px;
     background-color: #73956f;
     border-radius: 5px;
+    margin: 10px;
 }
 
 .todo {
     margin-bottom: 1rem;
     width: fit-content;
-    padding: 1rem;
+    padding: 0px 25px 10px;
     display: flex;
     justify-content: center;
     background-color: #403f4c;
     border-radius: 25px;
 }
 
+.todo p {
+    font-size: 20px;
+}
+
 .todo button {
     all: unset;
-    margin-right: 1rem;
     cursor: pointer;
     padding: 5px;
+    margin: 5px;
 }
 
 .todo .done {

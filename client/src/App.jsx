@@ -33,13 +33,13 @@ function App() {
         {todos.map(todo => (
           <div className="todo" key={todo._id}>
             <div>
+              <p>{todo.todo}</p>
               <button className="done">
                  Done
               </button>
               <button className="delete">
                 Delete
               </button>
-              {todo.todo}
             </div>
             <br/>
           </div>
