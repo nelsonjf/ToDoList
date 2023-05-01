@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// const API_BASE = "http://localhost:4000"
-
 function App() {
   const [todos, setTodos] = useState([])
   const [newTodo, setNewTodos] = useState('')
@@ -18,22 +16,32 @@ function App() {
         .catch(err => console.error("Error: ", err))
   }
 
+
   return (
     <div className="App">
       <h1>Welcome, User</h1>
 
       <div className="new-todo">
         <form>
-          <input type="text" placeholder="Enter new Todo here" />
-          <input type="submit" value="Submit" />
+          <input className="textbox" type="text" placeholder="Enter new Todo here" />
+          <input className="submit" type="submit" value="Submit" />
         </form>
       </div>
 
       <div className="todo-list">
         <h2>To Do List:</h2>
         {todos.map(todo => (
-          <div className="todo" key={todo.id}>
-            <p>{todo.todo}</p>
+          <div className="todo" key={todo._id}>
+            <div>
+              <button className="done">
+                 Done
+              </button>
+              <button className="delete">
+                Delete
+              </button>
+              {todo.todo}
+            </div>
+            <br/>
           </div>
         ))}
       </div>
