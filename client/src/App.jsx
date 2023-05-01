@@ -28,6 +28,12 @@ function App() {
       }))
   }
 
+  const deleteTodo = async id => {
+    const data = await fetch("/todo/delete/" + id, {method: "DELETE"}).then(res => res.json())
+
+    setTodos(todos => todos.filter(todo => todo._id !== data._id))
+  }
+
   return (
     <div className="App">
       <h1>Welcome, User</h1>
@@ -48,7 +54,7 @@ function App() {
               <button className="done" onClick={() => todoDone(todo._id)}>
                  Done
               </button>
-              <button className="delete">
+              <button className="delete" onClick={() => deleteTodo(todo._id)}>
                 Delete
               </button>
             </div>
