@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const API_BASE = "http://localhost:4000"
+// const API_BASE = "http://localhost:4000"
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -12,7 +12,7 @@ function App() {
   }, [])
 
   const GetTodos = () => {
-      fetch(API_BASE + "/todo")
+      fetch("/todo")
         .then(res => res.json())
         .then(data => setTodos(data))
         .catch(err => console.error("Error: ", err))
