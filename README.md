@@ -10,7 +10,7 @@ The To Do List will show all tasks the user has entered.  Each todo also has two
 That's all there is to it (for now).  Using a To Do list is incredibly simple and incredibly useful!
 
 ## Planned Functionality
-As it stands, this application is entirely local.  It runs on a local server using a local database.  It even requires the user to download the code to their local machine.  In the near future, this application will be deployed to a URL that anyone can find.  That will necessitate a public database to replace the current local one.  After deployment, user authentication will be implemented.  This means that users will each have their own unique todos as opposed to everyone sharing a database. 
+Connection to MongoDB Atlas has been made.  All that remains is deployment and user authentication
 
 ## Technologies
 HTML, CSS, JavaScript, React, React-Router-Dom, Express, Mongoose, Dotenv
