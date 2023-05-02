@@ -34,14 +34,38 @@ function App() {
     setTodos(todos => todos.filter(todo => todo._id !== data._id))
   }
 
+  const addTodo = async () => {
+    const data = await fetch("/todo/new", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        todo: newTodo
+      })
+    }).then(res => res.json())
+
+    setTodos([...todos, data])
+    setNewTodos("")
+  }
+
   return (
     <div className="App">
       <h1>Welcome, User</h1>
 
       <div className="new-todo">
         <form>
-          <input className="textbox" type="text" placeholder="Enter new Todo here" />
-          <input className="submit" type="submit" value="Submit" />
+          <input 
+            className="textbox" 
+            type="text" 
+            placeholder="Enter new Todo here" 
+            onChange={e => setNewTodos(e.target.value)}
+            value={newTodo}/>
+          <input 
+            className="submit" 
+            type="submit" 
+            value="Submit" 
+            onClick={addTodo}/>
         </form>
       </div>
 
