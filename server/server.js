@@ -41,6 +41,8 @@ app.get('/todo/done/:id', async (req, res) => {
 
 app.listen(process.env.PORT, () => console.log("Server running"))
 
+module.exports = app;
+
 ////////////////////////////////////////////////
 // Potts, T (2021)                            //
 // mern-todo [source code]                    //
