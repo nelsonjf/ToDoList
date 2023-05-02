@@ -1,4 +1,5 @@
 require('dotenv').config()
+const PORT = process.env.PORT
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -39,7 +40,7 @@ app.get('/todo/done/:id', async (req, res) => {
     res.json(todo)
 })
 
-app.listen(process.env.PORT, () => console.log("Server running"))
+app.listen(PORT, () => console.log("Server running"))
 
 module.exports = app;
 
