@@ -55,3 +55,9 @@ userSchema.statics.login = async function (email, password) {
 }
 
 module.exports = mongoose.model('User', userSchema)
+
+////////////////////////////////////////////////////////////////
+// The Net Ninja (2022)                                       //
+// MERN-auth-tutorial [source code]                           //
+// https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/main //
+////////////////////////////////////////////////////////////////

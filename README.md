@@ -20,3 +20,4 @@ HTML, CSS, JavaScript, React, React-Router-Dom, Express, Mongoose, Dotenv, Bcryp
 
 ## Citations
 Potts, T (2021) mern-todo [source code] https://github.com/TylerPottsDev/mern-todo
+The Net Ninja (2022) MERN-auth-tutorial [source code] https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/main
