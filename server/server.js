@@ -26,7 +26,17 @@ const creatToken = (_id) => {
 
 // User routes
 app.post('/login', async (req, res) => {
-    res.json({mssg: 'login user'})
+    const {email, password} = req.body
+    try {
+        const user = await User.login(email, password)
+        // create a token
+        const token = creatToken(user._id)
+        res.status(200).json({email, token})
+        return
+    } catch (error) {
+        res.status(400).json({error: error.message})
+        return
+    }
 })
 
 app.post('/signup', async (req, res) => {
@@ -36,11 +46,11 @@ app.post('/signup', async (req, res) => {
         // create a token
         const token = creatToken(user._id)
         res.status(200).json({email, token})
+        return
     } catch (error) {
         res.status(400).json({error: error.message})
         return
     }
-    res.json({mssg: 'signup user'})
 })
 
 // Todo routes
