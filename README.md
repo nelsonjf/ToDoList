@@ -10,7 +10,7 @@ When using the application you are presented with a welcome message, an input bo
 The To Do List will show all tasks the user has entered.  Each todo also has two buttons: done and delete.  The done button will mark the todo as complete, which is represented by a strike through the now green text.  The done button can be pressed again to undo the completion.  The delete button however will remove the task from the list entirely.
 
 ## Issues and Warnings
-As of now, submitting an empty todo crashes the server entirely and it will not comeback unless it is manually redeployed.  So don't do that.  Another server issue is a minor inconvinience: the server will "timeout" after 15 minutes.  It will "wake up" again 30 seconds after any request however. Just a bit annoying really.
+The server deployment will "sleep" after 15 mins of inactivity.  It will "wake up" 30 seconds~ after a request.  So you may just need to wait a bit for the todos to load
 
 ## Planned Functionality
 As it stands the deployment is universal.  Every user sees and interacts with the same database.  User authentication is turning out to be way more than I expected.  The tutorial I was following has context and custom hooks which I don't have and don't understand.  I can create users through postman just fine, but adding that functionality to the frontend is overwhelming.  

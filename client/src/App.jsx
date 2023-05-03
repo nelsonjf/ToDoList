@@ -53,6 +53,14 @@ function App() {
     setNewTodos("")
   }
 
+  // Checks if input is empty or not
+  function inputCheck () {
+    if (newTodo == '') {
+      return
+    }
+    addTodo()
+  }
+
   // HTML for the application
   return (
     <div className="App">
@@ -71,7 +79,7 @@ function App() {
             className="submit" 
             type="button" 
             value="Submit" 
-            onClick={addTodo}/>
+            onClick={inputCheck}/>
         </form>
       </div>
 
