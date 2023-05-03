@@ -1,17 +1,26 @@
 // React essentials
 import React, { useState, useEffect } from "react";
+import { useAuthContext } from './hooks/useAuthContext'
 
 function App() {
   const [todos, setTodos] = useState([])
   const [newTodo, setNewTodos] = useState('')
+  const [error, setError] = useState(null)
+  const {user} = useAuthContext()
 
   // Displaying the todos
   useEffect(() => {
-    GetTodos()
-  }, [])
+    if (user) {
+      GetTodos()
+    }
+  }, [user])
 
   const GetTodos = () => {
-      fetch("https://todoserver-8pqw.onrender.com/todo")
+      fetch("https://todoserver-8pqw.onrender.com/todo", {
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      })
         .then(res => res.json())
         .then(data => setTodos(data))
         .catch(err => console.error("Error: ", err))
@@ -32,17 +41,30 @@ function App() {
 
   // Detele a todo
   const deleteTodo = async id => {
-    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/delete/" + id, {method: "DELETE"}).then(res => res.json())
+    if (!user) {
+      return
+    }
+    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/delete/" + id, {
+      method: "DELETE",
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
+    }).then(res => res.json())
 
     setTodos(todos => todos.filter(todo => todo._id !== data._id))
   }
 
   // Make a new todo
   const addTodo = async () => {
+    if (!user) {
+      setError('You must be logged in')
+      return
+    }
     const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${user.token}`
       },
       body: JSON.stringify({
         todo: newTodo
@@ -80,6 +102,7 @@ function App() {
             type="button" 
             value="Submit" 
             onClick={inputCheck}/>
+            {error && <div className="error">{error}</div>}
         </form>
       </div>
 
