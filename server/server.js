@@ -1,3 +1,4 @@
+// Server requirements
 require('dotenv').config()
 const PORT = process.env.PORT
 const express = require('express')
@@ -8,13 +9,16 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+// Database connection
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("Connected to Database"))
 
+// Model import
 const Todo = require('./models/todo')
 
+// Routes
 app.get('/todo', async (req, res) => {
     const todo = await Todo.find()
     res.json(todo)
@@ -40,9 +44,8 @@ app.get('/todo/done/:id', async (req, res) => {
     res.json(todo)
 })
 
+// Start the server
 app.listen(PORT, () => console.log("Server running"))
-
-module.exports = app;
 
 ////////////////////////////////////////////////
 // Potts, T (2021)                            //

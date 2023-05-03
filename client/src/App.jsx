@@ -1,9 +1,11 @@
+// React essentials
 import React, { useState, useEffect } from "react";
 
 function App() {
   const [todos, setTodos] = useState([])
   const [newTodo, setNewTodos] = useState('')
 
+  // Displaying the todos
   useEffect(() => {
     GetTodos()
   }, [])
@@ -15,6 +17,7 @@ function App() {
         .catch(err => console.error("Error: ", err))
   }
 
+  // Mark a todo as complete
   const todoDone = async id => {
     const data = await fetch("https://todoserver-8pqw.onrender.com/todo/done/" + id).then(res => res.json())
 
@@ -27,12 +30,14 @@ function App() {
       }))
   }
 
+  // Detele a todo
   const deleteTodo = async id => {
     const data = await fetch("https://todoserver-8pqw.onrender.com/todo/delete/" + id, {method: "DELETE"}).then(res => res.json())
 
     setTodos(todos => todos.filter(todo => todo._id !== data._id))
   }
 
+  // Make a new todo
   const addTodo = async () => {
     const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new", {
       method: "POST",
@@ -48,10 +53,12 @@ function App() {
     setNewTodos("")
   }
 
+  // HTML for the application
   return (
     <div className="App">
       <h1>Welcome, User</h1>
 
+      {/* New todo form */}
       <div className="new-todo">
         <form onSubmit={(e) => {e.preventDefault()}}>
           <input 
@@ -68,6 +75,7 @@ function App() {
         </form>
       </div>
 
+      {/* List of Todos */}
       <div className="todo-list">
         <h2>To Do List:</h2>
         {todos.map(todo => (
