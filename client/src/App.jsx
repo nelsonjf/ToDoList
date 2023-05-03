@@ -34,7 +34,7 @@ function App() {
     setTodos(todos => todos.filter(todo => todo._id !== data._id))
   }
 
-  const addTodo = async () => {
+  const addTodo = async () => { console.log("post one")
     const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new", {
       method: "POST",
       headers: {
@@ -44,9 +44,10 @@ function App() {
         todo: newTodo
       })
     }).then(res => res.json())
-
+  
     setTodos([...todos, data])
     setNewTodos("")
+    console.log("post two")
   }
 
   return (
