@@ -17,7 +17,7 @@ function Navbar () {
             </h1>
             <nav>
                 {user && (
-                <div>
+                <div className="loggedIn">
                     <span>{user.email}</span>
                     <button onClick={handleClick}>Log Out</button>
                 </div>
