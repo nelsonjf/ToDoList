@@ -17,8 +17,18 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Model import
 const Todo = require('./models/todo')
+const User = require('./models/user')
 
-// Routes
+// User routes
+app.post('/login', async (req, res) => {
+    res.json({mssg: 'login user'})
+})
+
+app.post('/signup', async (req, res) => {
+    res.json({mssg: 'signup user'})
+})
+
+// Todo routes
 app.get('/todo', async (req, res) => {
     const todo = await Todo.find()
     res.json(todo)
