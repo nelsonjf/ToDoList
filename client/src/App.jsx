@@ -10,14 +10,14 @@ function App() {
   }, [])
 
   const GetTodos = () => {
-      fetch("/todo")
+      fetch("https://todoserver-8pqw.onrender.com/todo")
         .then(res => res.json())
         .then(data => setTodos(data))
         .catch(err => console.error("Error: ", err))
   }
 
   const todoDone = async id => {
-    const data = await fetch("/todo/done/" + id).then(res => res.json())
+    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/done/" + id).then(res => res.json())
 
       setTodos(todos => todos.map(todo => {
         if (todo._id === data._id) {
@@ -29,13 +29,13 @@ function App() {
   }
 
   const deleteTodo = async id => {
-    const data = await fetch("/todo/delete/" + id, {method: "DELETE"}).then(res => res.json())
+    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/delete/" + id, {method: "DELETE"}).then(res => res.json())
 
     setTodos(todos => todos.filter(todo => todo._id !== data._id))
   }
 
   const addTodo = async () => {
-    const data = await fetch("/todo/new", {
+    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
