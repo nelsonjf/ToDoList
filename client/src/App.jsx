@@ -6,7 +6,6 @@ function App() {
 
   useEffect(() => {
     GetTodos()
-    console.log(todos)
   }, [])
 
   const GetTodos = () => {
@@ -34,7 +33,7 @@ function App() {
     setTodos(todos => todos.filter(todo => todo._id !== data._id))
   }
 
-  const addTodo = async () => { console.log("post one")
+  const addTodo = async () => {
     const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new", {
       method: "POST",
       headers: {
@@ -47,7 +46,6 @@ function App() {
   
     setTodos([...todos, data])
     setNewTodos("")
-    console.log("post two")
   }
 
   return (
@@ -55,12 +53,12 @@ function App() {
       <h1>Welcome, User</h1>
 
       <div className="new-todo">
-        <form>
+        <form onSubmit={(e) => {e.preventDefault()}}>
           <input 
             className="textbox" 
             type="text" 
             placeholder="Enter new Todo here" 
-            onChange={e => setNewTodos(e.target.value)}
+            onChange={e => setNewTodos(e.target.value,)}
             value={newTodo}/>
           <input 
             className="submit" 
