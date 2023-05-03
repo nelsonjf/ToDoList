@@ -1,6 +1,7 @@
 body {
     background-color: #424b54;
     color: #fcfcfc;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .App {
@@ -8,6 +9,81 @@ body {
     width: 90vw;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: #403f4c;
+    padding: 1rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .account {
+    margin: auto;
+}
+
+.navbar .account a {
+    margin-left: 30px;
+}
+
+.navbar h1 {
+    margin-left: 1rem;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.login {
+    margin: auto;
+    width: 90vw;
+}
+
+.login input {
+    all: unset;
+    background-color: #403f4c;
+    color: #fcfcfc;
+    padding: 1rem;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50vw;
+}
+
+.login button {
+    all: unset;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #73956f;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.signup {
+    margin: auto;
+    width: 90vw;
+}
+
+.signup input {
+    all: unset;
+    background-color: #403f4c;
+    color: #fcfcfc;
+    padding: 1rem;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50vw;
+}
+
+.signup button {
+    all: unset;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #73956f;
+    border-radius: 5px;
+    margin: 10px;
 }
 
 .new-todo .textbox {
