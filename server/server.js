@@ -18,6 +18,12 @@ mongoose.connect(process.env.MONGO_URI, {
 const Todo = require('./models/todo')
 const User = require('./models/user')
 
+// JWT tokens
+const jwt = require('jsonwebtoken')
+const creatToken = (_id) => {
+    return jwt.sign({_id}, process.env.SECRET, {expiresIn: '3d'})
+}
+
 // User routes
 app.post('/login', async (req, res) => {
     res.json({mssg: 'login user'})
@@ -27,7 +33,9 @@ app.post('/signup', async (req, res) => {
     const {email, password} = req.body
     try {
         const user = await User.signup(email, password)
-        res.status(200).json({email, user})
+        // create a token
+        const token = creatToken(user._id)
+        res.status(200).json({email, token})
     } catch (error) {
         res.status(400).json({error: error.message})
         return
