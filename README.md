@@ -16,7 +16,7 @@ As of now, submitting an empty todo crashes the server entirely and it will not 
 All that needs to be done is User Authentication and all functionality will be met.
 
 ## Technologies
-HTML, CSS, JavaScript, React, React-Router-Dom, Express, Mongoose, Dotenv
+HTML, CSS, JavaScript, React, React-Router-Dom, Express, Mongoose, Dotenv, Bcrypt, Validator, Json Web Tokens
 
 ## Citations
 Potts, T (2021) mern-todo [source code] https://github.com/TylerPottsDev/mern-todo
