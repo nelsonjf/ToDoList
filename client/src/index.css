@@ -36,6 +36,11 @@ a:link, a:visited, a:hover, a:active {
     color: inherit;
 }
 
+.navbar button {
+    all: unset;
+    cursor: pointer
+}
+
 .login {
     margin: auto;
     width: 90vw;
