@@ -64,7 +64,7 @@ function App() {
             value={newTodo}/>
           <input 
             className="submit" 
-            type="submit" 
+            type="button" 
             value="Submit" 
             onClick={addTodo}/>
         </form>
