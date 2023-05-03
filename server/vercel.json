@@ -3,7 +3,7 @@
   "builds": [
     { 
     "src": "sever.js", 
-    "use": "@vercel/node" 
+    "use": "@now/node" 
     }
   ],
     "routes": [
