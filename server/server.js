@@ -5,8 +5,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
+const requireAuth = require('./middleware/requireAuth')
+
 app.use(express.json())
 app.use(cors())
+
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -54,6 +57,7 @@ app.post('/signup', async (req, res) => {
 })
 
 // Todo routes
+app.use(requireAuth)
 app.get('/todo', async (req, res) => {
     const todo = await Todo.find()
     res.json(todo)
