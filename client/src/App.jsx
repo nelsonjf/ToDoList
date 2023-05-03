@@ -35,7 +35,7 @@ function App() {
   }
 
   const addTodo = async () => {
-    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new", {
+    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/new/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
