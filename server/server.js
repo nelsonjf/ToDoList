@@ -30,6 +30,7 @@ app.post('/signup', async (req, res) => {
         res.status(200).json({email, user})
     } catch (error) {
         res.status(400).json({error: error.message})
+        return
     }
     res.json({mssg: 'signup user'})
 })

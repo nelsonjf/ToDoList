@@ -10,7 +10,7 @@ The To Do List will show all tasks the user has entered.  Each todo also has two
 That's all there is to it (for now).  Using a To Do list is incredibly simple and incredibly useful!
 
 ## Issues and Warnings
-As of now, submitting an empty todo crashes the server entirely and it will not comeback unless it is manually redeployed.  So don't do that.  Another server issue is a minor inconvinience: the server will "timeout" after 15 minutes.  It will "wake up" again 30 seconds after any request however. Just a bit annoying really.  New issue: ERR_HTTP_HEADERS_SENT. looking into this one
+As of now, submitting an empty todo crashes the server entirely and it will not comeback unless it is manually redeployed.  So don't do that.  Another server issue is a minor inconvinience: the server will "timeout" after 15 minutes.  It will "wake up" again 30 seconds after any request however. Just a bit annoying really.
 
 ## Planned Functionality
 All that needs to be done is User Authentication and all functionality will be met.
