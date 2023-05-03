@@ -9,8 +9,11 @@ The To Do List will show all tasks the user has entered.  Each todo also has two
 
 That's all there is to it (for now).  Using a To Do list is incredibly simple and incredibly useful!
 
+## Issues and Warnings
+As of now, submitting an empty todo crashes the server entirely and it will not comeback unless it is manually redeployed.  So don't do that.  Another server issue is a minor inconvinience: the server will "timeout" after 15 minutes.  It will "wake up" again 30 seconds after any request however. Just a bit annoying really
+
 ## Planned Functionality
-All that needs to be done is User Authentication and all functionality will be met.  However there is a bug that needs to be fixed.  If the user submits an empty todo the server completely breaks and needs to restart.  So that's bad
+All that needs to be done is User Authentication and all functionality will be met.
 
 ## Technologies
 HTML, CSS, JavaScript, React, React-Router-Dom, Express, Mongoose, Dotenv
