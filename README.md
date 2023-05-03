@@ -10,7 +10,7 @@ The To Do List will show all tasks the user has entered.  Each todo also has two
 That's all there is to it (for now).  Using a To Do list is incredibly simple and incredibly useful!
 
 ## Planned Functionality
-Connection to MongoDB Atlas has been made.  All that remains is deployment and user authentication
+All that needs to be done is User Authentication and all functionality will be met.  However there is a bug that needs to be fixed.  If the user submits an empty todo the server completely breaks and needs to restart.  So that's bad
 
 ## Technologies
 HTML, CSS, JavaScript, React, React-Router-Dom, Express, Mongoose, Dotenv
