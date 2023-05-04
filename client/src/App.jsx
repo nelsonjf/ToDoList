@@ -28,7 +28,15 @@ function App() {
 
   // Mark a todo as complete
   const todoDone = async id => {
-    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/done/" + id).then(res => res.json())
+    if (!user) {
+      return
+    }
+    const data = await fetch("https://todoserver-8pqw.onrender.com/todo/done/" + id, {
+      method: "GET",
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
+    }).then(res => res.json())
 
       setTodos(todos => todos.map(todo => {
         if (todo._id === data._id) {
