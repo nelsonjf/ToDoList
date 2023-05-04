@@ -30,3 +30,9 @@ export const useLogin = () => {
 
     return { login, loading, error }
 }
+
+////////////////////////////////////////////////////////////////
+// The Net Ninja (2022)                                       //
+// MERN-auth-tutorial [source code]                           //
+// https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/main //
+////////////////////////////////////////////////////////////////

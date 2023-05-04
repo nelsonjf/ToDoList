@@ -23,3 +23,9 @@ const requireAuth = async (req, res, next) => {
 }
 
 module.exports = requireAuth
+
+////////////////////////////////////////////////////////////////
+// The Net Ninja (2022)                                       //
+// MERN-auth-tutorial [source code]                           //
+// https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/main //
+////////////////////////////////////////////////////////////////
