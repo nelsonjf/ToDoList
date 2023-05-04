@@ -60,15 +60,20 @@ app.post('/signup', async (req, res) => {
 app.use(requireAuth)
 app.get('/todo', async (req, res) => {
     const todo = await Todo.find()
+    console.log(todo)
     res.json(todo)
 })
 
 app.post('/todo/new', (req, res) => {
-    const todo = new Todo({
-        todo: req.body.todo
-    })
-    todo.save()
-    res.json(todo)
+    const todo = req.body.todo
+    const user_id = req.user._id
+//  const newTodo = Todo.create({todo, user_id})
+    const newTodo = new Todo({
+    todo: todo,
+    user_id: user_id
+   })
+   console.log(newTodo)
+    res.json(newTodo)
 })
 
 app.delete('/todo/delete/:id', async (req, res) => {

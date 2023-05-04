@@ -8,6 +8,10 @@ const todoSchema = new mongoose.Schema({
     done: {
         type: Boolean,
         default: false
+    },
+    user_id: {
+        type: String,
+        required: true
     }
 })
 
